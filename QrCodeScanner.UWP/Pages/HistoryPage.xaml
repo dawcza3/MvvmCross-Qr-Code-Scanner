@@ -1,0 +1,30 @@
+﻿<local:BasePage x:Class="QrCodeScanner.UWP.Pages.HistoryPage"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:local="using:QrCodeScanner.UWP.Pages"
+                xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <TextBlock FontSize="40" HorizontalAlignment="Center" Text="Scanner History" />
+        <ListBox Grid.Row="1" ItemsSource="{Binding HistoryItems}" HorizontalContentAlignment="Center">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel >
+                        <TextBlock HorizontalAlignment="Center" TextAlignment="Center"
+                                   Text="{Binding Result}" />
+                        <TextBlock HorizontalAlignment="Center" Text="{Binding DateTime}" TextAlignment="Center" />
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </Grid>
+</local:BasePage>
+
+
+
